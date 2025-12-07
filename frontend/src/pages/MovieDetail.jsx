@@ -40,7 +40,6 @@ const MovieDetail = () => {
       
       setError(null);
       
-      // Animation on load
       gsap.fromTo('.movie-detail-container', 
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
@@ -134,7 +133,6 @@ const MovieDetail = () => {
 
   return (
     <div className="min-h-screen bg-black text-white movie-detail-container">
-      {/* Hero Section with Movie Backdrop */}
       <div 
         className="relative h-96 overflow-hidden"
         style={{
@@ -147,7 +145,6 @@ const MovieDetail = () => {
         
         <div className="container mx-auto px-4 h-full flex items-end pb-12 relative z-10">
           <div className="flex flex-col md:flex-row items-start md:items-end space-y-6 md:space-y-0">
-            {/* Movie Poster */}
             <div className="mr-8">
               <div className="w-48 h-72 md:w-64 md:h-96 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                 {movie.poster_url ? (
@@ -168,7 +165,6 @@ const MovieDetail = () => {
               </div>
             </div>
             
-            {/* Movie Info */}
             <div className="flex-1">
               <Link
                 to="/"
@@ -220,10 +216,8 @@ const MovieDetail = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Movie Details */}
           <div className="lg:col-span-2">
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-gray-800 mb-8">
               <h2 className="text-2xl font-bold mb-6 flex items-center">
@@ -236,7 +230,6 @@ const MovieDetail = () => {
               </p>
             </div>
 
-            {/* Reviews Section */}
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-gray-800">
               <div className="flex justify-between items-center mb-8">
                 <h2 className="text-2xl font-bold">
@@ -296,9 +289,7 @@ const MovieDetail = () => {
             </div>
           </div>
 
-          {/* Right Column - Movie Stats & Actions */}
           <div className="space-y-6">
-            {/* Average Rating Card */}
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800">
               <div className="text-center mb-6">
                 <div className="text-5xl font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
@@ -326,12 +317,10 @@ const MovieDetail = () => {
                       />
                     </div>
                   </div>
-                  {/* Add similar bars for 4, 3, 2, 1 stars if needed */}
                 </div>
               )}
             </div>
 
-            {/* Movie Info Card */}
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800">
               <h3 className="text-xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
@@ -366,7 +355,6 @@ const MovieDetail = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800">
               <h3 className="text-xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
