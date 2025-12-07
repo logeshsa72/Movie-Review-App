@@ -92,3 +92,291 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #764ba2, #f093fb);
 }
+/* Add to your existing index.css */
+
+/* CINEMATIC PREMIUM ANIMATIONS */
+
+/* Neon Glow Effect */
+.neon-glow {
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #fbbf24,
+    0 0 70px #fbbf24,
+    0 0 80px #fbbf24,
+    0 0 100px #fbbf24,
+    0 0 150px #fbbf24;
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #fff,
+      0 0 40px #fbbf24,
+      0 0 70px #fbbf24,
+      0 0 80px #fbbf24,
+      0 0 100px #fbbf24,
+      0 0 150px #fbbf24;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+/* Hollywood Marquee */
+.marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Film Reel Animation */
+@keyframes film-reel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.film-reel {
+  animation: film-reel 10s linear infinite;
+}
+
+/* Spotlight Effect */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 70%);
+  animation: spotlight-rotate 10s linear infinite;
+}
+
+@keyframes spotlight-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 3D Card Flip */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.card-3d:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Strobe Light Effect */
+@keyframes strobe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.strobe {
+  animation: strobe 0.5s infinite;
+}
+
+/* Gradient Border Animation */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(90deg, #fbbf24, #dc2626, #7c3aed);
+  padding: 2px;
+  border-radius: 1rem;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: black;
+  z-index: -1;
+}
+
+/* Particle Explosion */
+@keyframes particle-explode {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1);
+    opacity: 0;
+  }
+}
+
+.particle {
+  --tx: 0;
+  --ty: 0;
+  animation: particle-explode 1s ease-out forwards;
+}
+
+/* Screen Flicker (like old film) */
+@keyframes screen-flicker {
+  0%, 100% { opacity: 1; }
+  10% { opacity: 0.8; }
+  20% { opacity: 1; }
+  30% { opacity: 0.7; }
+  40% { opacity: 1; }
+  50% { opacity: 0.9; }
+  60% { opacity: 1; }
+}
+
+.screen-flicker {
+  animation: screen-flicker 0.15s infinite;
+}
+
+/* Opening Credits Scroll */
+@keyframes credits-scroll {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.credits {
+  animation: credits-scroll 20s linear infinite;
+}
+
+/* Laser Beam */
+.laser-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.laser-beam::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+  animation: laser-sweep 2s linear infinite;
+}
+
+@keyframes laser-sweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* 3D Text Depth */
+.text-3d {
+  color: #fbbf24;
+  text-shadow: 
+    1px 1px 0 #b45309,
+    2px 2px 0 #92400e,
+    3px 3px 0 #78350f,
+    4px 4px 0 #7c2d12,
+    5px 5px 0px rgba(0,0,0,0.8);
+}
+
+/* Hologram Effect */
+.hologram {
+  position: relative;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff00);
+  background-size: 200% 200%;
+  animation: hologram-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes hologram-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Cinema Curtain */
+@keyframes curtain-open {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+  }
+}
+
+.curtain {
+  animation: curtain-open 2s ease-out forwards;
+}
+
+/* Premium Glass Morphism */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Movie Projector Light */
+@keyframes projector-light {
+  0% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  25% {
+    transform: rotate(2deg) translateX(5px);
+  }
+  75% {
+    transform: rotate(-2deg) translateX(-5px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0px);
+  }
+}
+
+.projector-light {
+  animation: projector-light 2s ease-in-out infinite;
+}
+
+/* Red Carpet Roll */
+@keyframes carpet-roll {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.carpet {
+  animation: carpet-roll 2s ease-out forwards;
+}

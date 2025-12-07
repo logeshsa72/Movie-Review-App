@@ -2,31 +2,30 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import MovieList from './pages/MovieList.jsx';
 import MovieDetail from './pages/MovieDetail.jsx';
 import AddReview from './pages/AddReview.jsx';
-import AdminPanel from './pages/AdminPanel.jsx';
+import AdminLogin from './pages/AdminLogin.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
 import Navbar from './components/Navbar.jsx';
-import { MovieProvider } from './context/MovieContext.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
 
 function App() {
   return (
-    <MovieProvider>
+    <ErrorBoundary>
       <Router>
         <div className="min-h-screen bg-gray-50">
           <Navbar />
           <main className="container mx-auto px-4 py-8">
-            <ErrorBoundary>
-              <Routes>
-                <Route path="/" element={<MovieList />} />
-                <Route path="/movies/:id" element={<MovieDetail />} />
-                <Route path="/movies/:id/review" element={<AddReview />} />
-                <Route path="/admin" element={<AdminPanel />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
-              </Routes>
-            </ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<MovieList />} />
+              <Route path="/movies/:id" element={<MovieDetail />} />
+              <Route path="/movies/:id/review" element={<AddReview />} />
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
           </main>
         </div>
       </Router>
-    </MovieProvider>
+    </ErrorBoundary>
   );
 }
 

@@ -102,7 +102,6 @@ const MovieDetail = () => {
                 </div>
               </div>
               
-              {/* ⭐ FIXED: safe Number() conversion */}
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600">
                   {Number(movie.rating || 0).toFixed(1)}
