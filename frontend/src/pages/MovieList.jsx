@@ -596,7 +596,6 @@ const MovieList = () => {
         </div>
       </button>
 
-      {/* Background Particles */}
       <div className="fixed inset-0 pointer-events-none -z-10">
         {[...Array(50)].map((_, i) => (
           <div

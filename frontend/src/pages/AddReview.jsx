@@ -52,7 +52,6 @@ const AddReview = () => {
     setLoading(true);
     setError('');
 
-    // Validate form
     if (!formData.reviewer_name.trim()) {
       setError('Please enter your name');
       setLoading(false);
@@ -71,7 +70,6 @@ const AddReview = () => {
         ...formData
       });
 
-      // Redirect to movie page with success message
       navigate(`/movies/${id}?review=success`);
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to submit review. Please try again.');
@@ -91,7 +89,6 @@ const AddReview = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
       <div className="container mx-auto px-4">
-        {/* Back Button */}
         <div className="mb-8">
           <Link
             to={`/movies/${id}`}
@@ -104,7 +101,6 @@ const AddReview = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            {/* Header */}
             <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                 {movie?.poster_url ? (
@@ -129,7 +125,6 @@ const AddReview = () => {
               </div>
             </div>
 
-            {/* Form */}
             <div className="p-8">
               {error && (
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
@@ -143,7 +138,6 @@ const AddReview = () => {
               )}
 
               <form onSubmit={handleSubmit}>
-                {/* Rating */}
                 <div className="mb-8">
                   <label className="block text-gray-700 mb-4 text-lg font-medium">
                     Your Rating
@@ -171,7 +165,6 @@ const AddReview = () => {
                   </p>
                 </div>
 
-                {/* Reviewer Name */}
                 <div className="mb-8">
                   <label className="flex items-center text-gray-700 mb-3 text-lg font-medium">
                     <FaUser className="mr-2 text-blue-500" />
@@ -188,7 +181,6 @@ const AddReview = () => {
                   />
                 </div>
 
-                {/* Comment */}
                 <div className="mb-8">
                   <label className="flex items-center text-gray-700 mb-3 text-lg font-medium">
                     <FaPenAlt className="mr-2 text-green-500" />
@@ -208,7 +200,6 @@ const AddReview = () => {
                   </div>
                 </div>
 
-                {/* Submit Buttons */}
                 <div className="flex flex-col sm:flex-row justify-end space-y-4 sm:space-y-0 sm:space-x-4 pt-6 border-t">
                   <button
                     type="button"
@@ -237,7 +228,6 @@ const AddReview = () => {
             </div>
           </div>
 
-          {/* Tips */}
           <div className="mt-8 bg-blue-50 border border-blue-200 rounded-2xl p-6">
             <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center">
               💡 Writing Tips

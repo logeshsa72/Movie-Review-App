@@ -126,7 +126,6 @@ const InsertMovies = () => {
         </div>
       )}
 
-      {/* Header */}
       <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -147,7 +146,6 @@ const InsertMovies = () => {
         </div>
       </div>
 
-      {/* Tabs */}
       <div className="container mx-auto px-4 -mt-4">
         <div className="flex space-x-1 bg-white rounded-t-xl p-1 shadow-sm">
           <button
@@ -174,9 +172,7 @@ const InsertMovies = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
-        {/* Success/Error Messages */}
         {success && (
           <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
             <div className="flex items-center text-green-700">
@@ -304,7 +300,6 @@ const InsertMovies = () => {
 
         {activeTab === 'insert' && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Manual Add Form */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Add Movie Manually</h2>
               <p className="text-gray-600 mb-6">Fill in all the details to add a new movie to your collection.</p>
@@ -317,7 +312,6 @@ const InsertMovies = () => {
               </button>
             </div>
 
-            {/* Sample Movies */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Add Sample Movies</h2>
               <p className="text-gray-600 mb-6">Quickly add popular movies to your collection with one click.</p>

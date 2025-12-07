@@ -52,12 +52,10 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
         poster_url: ''
       });
 
-      // Call success callback if provided
       if (onSuccess) {
         onSuccess(response.data);
       }
 
-      // Close form after 2 seconds
       setTimeout(() => {
         if (onClose) onClose();
       }, 2000);
@@ -110,7 +108,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
 
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Title */}
           <div className="md:col-span-2">
             <label className="flex items-center text-gray-700 mb-2 font-medium">
               <FaFilm className="mr-2 text-blue-500" />
@@ -127,7 +124,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
             />
           </div>
 
-          {/* Director */}
           <div>
             <label className="flex items-center text-gray-700 mb-2 font-medium">
               <FaUser className="mr-2 text-purple-500" />
@@ -144,7 +140,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
             />
           </div>
 
-          {/* Release Year */}
           <div>
             <label className="flex items-center text-gray-700 mb-2 font-medium">
               <FaCalendarAlt className="mr-2 text-green-500" />
@@ -162,7 +157,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
             />
           </div>
 
-          {/* Duration */}
           <div>
             <label className="flex items-center text-gray-700 mb-2 font-medium">
               <FaClock className="mr-2 text-orange-500" />
@@ -179,7 +173,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
             />
           </div>
 
-          {/* Genre */}
           <div>
             <label className="flex items-center text-gray-700 mb-2 font-medium">
               <FaTag className="mr-2 text-pink-500" />
@@ -196,7 +189,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
             />
           </div>
 
-          {/* Poster URL */}
           <div>
             <label className="flex items-center text-gray-700 mb-2 font-medium">
               <FaImage className="mr-2 text-teal-500" />
@@ -212,7 +204,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
             />
           </div>
 
-          {/* Description */}
           <div className="md:col-span-2">
             <label className="block text-gray-700 mb-2 font-medium">
               Description *
@@ -229,7 +220,6 @@ const AddMovieForm = ({ onClose, onSuccess }) => {
           </div>
         </div>
 
-        {/* Buttons */}
         <div className="flex justify-end space-x-4 mt-8 pt-6 border-t">
           <button
             type="button"

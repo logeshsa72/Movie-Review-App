@@ -34,7 +34,6 @@ const AdminLogin = () => {
     setError('');
     setSuccess('');
 
-    // Simple validation
     if (!formData.username.trim() || !formData.password.trim()) {
       setError('Please enter both username and password');
       setLoading(false);
@@ -42,16 +41,13 @@ const AdminLogin = () => {
     }
 
     try {
-      // In production, this would be an API call
-      // For demo, we'll use hardcoded credentials
+
       if (formData.username === 'admin' && formData.password === 'admin123') {
-        // Store admin session
         localStorage.setItem('adminLoggedIn', 'true');
         localStorage.setItem('adminUsername', formData.username);
         
         setSuccess('Login successful! Redirecting...');
         
-        // Redirect after 1 second
         setTimeout(() => {
           navigate('/admin/dashboard');
         }, 1000);
@@ -69,9 +65,7 @@ const AdminLogin = () => {
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12">
       <div className="w-full max-w-md">
-        {/* Login Card */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 text-center">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-4 backdrop-blur-sm">
               <FaShieldAlt className="text-3xl" />
@@ -80,7 +74,6 @@ const AdminLogin = () => {
             <p className="text-blue-100">Secure access to movie management</p>
           </div>
 
-          {/* Form */}
           <div className="p-8">
             {error && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
@@ -105,7 +98,6 @@ const AdminLogin = () => {
             )}
 
             <form onSubmit={handleSubmit}>
-              {/* Username */}
               <div className="mb-6">
                 <label className="flex items-center text-gray-700 mb-2 font-medium">
                   <FaUser className="mr-2 text-blue-500" />
@@ -124,7 +116,6 @@ const AdminLogin = () => {
                 </div>
               </div>
 
-              {/* Password */}
               <div className="mb-8">
                 <label className="flex items-center text-gray-700 mb-2 font-medium">
                   <FaLock className="mr-2 text-purple-500" />
@@ -143,7 +134,6 @@ const AdminLogin = () => {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={loading}
@@ -163,7 +153,6 @@ const AdminLogin = () => {
               </button>
             </form>
 
-            {/* Demo Credentials */}
             <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
               <div className="flex items-center text-blue-700 mb-2">
                 <FaFilm className="mr-2" />
@@ -175,7 +164,6 @@ const AdminLogin = () => {
               </div>
             </div>
 
-            {/* Additional Info */}
             <div className="mt-6 text-center">
               <p className="text-gray-500 text-sm">
                 This is a secure admin portal. Unauthorized access is prohibited.

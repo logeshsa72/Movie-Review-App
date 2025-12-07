@@ -35,7 +35,6 @@ const AdminDashboard = () => {
   const [success, setSuccess] = useState('');
   const [adminUsername, setAdminUsername] = useState('');
 
-  // Check if admin is logged in
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('adminLoggedIn');
     const username = localStorage.getItem('adminUsername');
@@ -81,7 +80,6 @@ const AdminDashboard = () => {
     setError('');
     setSuccess('');
 
-    // Validate form
     if (!formData.title.trim()) {
       setError('Title is required');
       setLoading(false);
@@ -103,10 +101,8 @@ const AdminDashboard = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/movies', formData);
       
-      // Add new movie to list
       setMovies(prev => [response.data, ...prev]);
       
-      // Reset form
       setFormData({
         title: '',
         description: '',
@@ -120,7 +116,6 @@ const AdminDashboard = () => {
       setShowAddForm(false);
       setSuccess('Movie added successfully!');
       
-      // Clear success message after 3 seconds
       setTimeout(() => setSuccess(''), 3000);
       
     } catch (err) {
@@ -224,7 +219,6 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
       <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-2xl p-8 mb-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
@@ -252,7 +246,6 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Success/Error Messages */}
       {success && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
           <div className="flex items-center text-green-700">
@@ -275,7 +268,6 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* Add Movie Form Modal */}
       {showAddForm && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
@@ -296,7 +288,6 @@ const AdminDashboard = () => {
 
               <form onSubmit={handleAddMovie}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Title */}
                   <div className="md:col-span-2">
                     <label className="flex items-center text-gray-700 mb-2 font-medium">
                       <FaFilm className="mr-2 text-blue-500" />
@@ -313,7 +304,6 @@ const AdminDashboard = () => {
                     />
                   </div>
 
-                  {/* Director */}
                   <div>
                     <label className="flex items-center text-gray-700 mb-2 font-medium">
                       <FaUser className="mr-2 text-purple-500" />
@@ -330,7 +320,6 @@ const AdminDashboard = () => {
                     />
                   </div>
 
-                  {/* Release Year */}
                   <div>
                     <label className="flex items-center text-gray-700 mb-2 font-medium">
                       <FaCalendarAlt className="mr-2 text-green-500" />
@@ -348,7 +337,6 @@ const AdminDashboard = () => {
                     />
                   </div>
 
-                  {/* Duration */}
                   <div>
                     <label className="flex items-center text-gray-700 mb-2 font-medium">
                       <FaClock className="mr-2 text-orange-500" />
@@ -365,7 +353,6 @@ const AdminDashboard = () => {
                     />
                   </div>
 
-                  {/* Genre */}
                   <div>
                     <label className="flex items-center text-gray-700 mb-2 font-medium">
                       <FaTag className="mr-2 text-pink-500" />
@@ -382,7 +369,6 @@ const AdminDashboard = () => {
                     />
                   </div>
 
-                  {/* Poster URL */}
                   <div>
                     <label className="flex items-center text-gray-700 mb-2 font-medium">
                       <FaImage className="mr-2 text-teal-500" />
@@ -398,7 +384,6 @@ const AdminDashboard = () => {
                     />
                   </div>
 
-                  {/* Description */}
                   <div className="md:col-span-2">
                     <label className="block text-gray-700 mb-2 font-medium">
                       Description *
@@ -415,7 +400,6 @@ const AdminDashboard = () => {
                   </div>
                 </div>
 
-                {/* Buttons */}
                 <div className="flex justify-end space-x-4 mt-8 pt-6 border-t">
                   <button
                     type="button"
@@ -446,9 +430,7 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* Action Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {/* Add Movie Card */}
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-6">
           <div className="flex items-center mb-4">
             <div className="p-3 bg-blue-500 rounded-lg text-white mr-4">
@@ -471,7 +453,6 @@ const AdminDashboard = () => {
 
       
 
-        {/* Statistics Card */}
         <div className="bg-gradient-to-r from-purple-50 to-purple-100 border border-purple-200 rounded-2xl p-6">
           <div className="flex items-center mb-4">
             <div className="p-3 bg-purple-500 rounded-lg text-white mr-4">
@@ -503,7 +484,6 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Movies List */}
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="p-6 border-b border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
